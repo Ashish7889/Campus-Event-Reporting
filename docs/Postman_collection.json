@@ -1,0 +1,414 @@
+{
+  "info": {
+    "name": "Campus Event Reporting System",
+    "description": "Complete API collection for testing the Campus Event Reporting System",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000/api"
+    },
+    {
+      "key": "adminToken",
+      "value": "admin123456"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/health"
+      }
+    },
+    {
+      "name": "Public Endpoints",
+      "item": [
+        {
+          "name": "Get All Events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/events",
+              "host": ["{{baseUrl}}"],
+              "path": ["events"]
+            }
+          }
+        },
+        {
+          "name": "Get Events with Filters",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/events?college_id=COL_A&type=Workshop&limit=5",
+              "host": ["{{baseUrl}}"],
+              "path": ["events"],
+              "query": [
+                {"key": "college_id", "value": "COL_A"},
+                {"key": "type", "value": "Workshop"},
+                {"key": "limit", "value": "5"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Single Event",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/events/EVENT_1"
+          }
+        },
+        {
+          "name": "Get Colleges",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/colleges"
+          }
+        },
+        {
+          "name": "Register for Event (New Student)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"student_id\": \"new\",\n  \"name\": \"Test Student\",\n  \"email\": \"test@example.com\",\n  \"roll_no\": \"TEST001\",\n  \"phone\": \"9876543210\"\n}"
+            },
+            "url": "{{baseUrl}}/events/EVENT_1/register"
+          }
+        },
+        {
+          "name": "Register for Event (Existing Student)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"student_id\": \"STUD_1\",\n  \"name\": \"Arjun Sharma\",\n  \"email\": \"arjun.sharma@techuniv.edu.in\"\n}"
+            },
+            "url": "{{baseUrl}}/events/EVENT_1/register"
+          }
+        },
+        {
+          "name": "Check-in Attendance",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"method\": \"manual\"\n}"
+            },
+            "url": "{{baseUrl}}/registrations/REG_1/checkin"
+          }
+        },
+        {
+          "name": "Submit Feedback",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 5,\n  \"comment\": \"Great workshop! Learned a lot about the topic.\"\n}"
+            },
+            "url": "{{baseUrl}}/registrations/REG_1/feedback"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin Endpoints",
+      "item": [
+        {
+          "name": "Create Event",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-admin-token",
+                "value": "{{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"college_id\": \"COL_A\",\n  \"title\": \"New AI Workshop\",\n  \"type\": \"Workshop\",\n  \"description\": \"Learn about artificial intelligence and machine learning\",\n  \"start_time\": \"2024-12-01T10:00:00.000Z\",\n  \"end_time\": \"2024-12-01T16:00:00.000Z\",\n  \"capacity\": 50\n}"
+            },
+            "url": "{{baseUrl}}/admin/events"
+          }
+        },
+        {
+          "name": "Get Admin Events",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-admin-token",
+                "value": "{{adminToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/admin/events?college_id=COL_A",
+              "host": ["{{baseUrl}}"],
+              "path": ["admin", "events"],
+              "query": [
+                {"key": "college_id", "value": "COL_A"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Event",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-admin-token",
+                "value": "{{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated AI Workshop\",\n  \"type\": \"Workshop\",\n  \"description\": \"Updated description for AI workshop\",\n  \"start_time\": \"2024-12-01T11:00:00.000Z\",\n  \"end_time\": \"2024-12-01T17:00:00.000Z\",\n  \"capacity\": 75\n}"
+            },
+            "url": "{{baseUrl}}/admin/events/EVENT_1"
+          }
+        },
+        {
+          "name": "Cancel Event",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-admin-token",
+                "value": "{{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/admin/events/EVENT_1"
+          }
+        },
+        {
+          "name": "Get Event Details (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-admin-token",
+                "value": "{{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/admin/events/EVENT_1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reporting Endpoints",
+      "item": [
+        {
+          "name": "Event Popularity Report",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/reports/popularity?college_id=COL_A&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["reports", "popularity"],
+              "query": [
+                {"key": "college_id", "value": "COL_A"},
+                {"key": "limit", "value": "10"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Attendance Report",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/reports/attendance?event_id=EVENT_1",
+              "host": ["{{baseUrl}}"],
+              "path": ["reports", "attendance"],
+              "query": [
+                {"key": "event_id", "value": "EVENT_1"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Feedback Report",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/reports/feedback?event_id=EVENT_1",
+              "host": ["{{baseUrl}}"],
+              "path": ["reports", "feedback"],
+              "query": [
+                {"key": "event_id", "value": "EVENT_1"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Student Participation Report",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/reports/student/STUD_1/participation"
+          }
+        },
+        {
+          "name": "Top Active Students",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/reports/top-active?college_id=COL_A&limit=5",
+              "host": ["{{baseUrl}}"],
+              "path": ["reports", "top-active"],
+              "query": [
+                {"key": "college_id", "value": "COL_A"},
+                {"key": "limit", "value": "5"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Registrations Per Event",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/reports/registrations-per-event?college_id=COL_A",
+              "host": ["{{baseUrl}}"],
+              "path": ["reports", "registrations-per-event"],
+              "query": [
+                {"key": "college_id", "value": "COL_A"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Filter Report (Bonus)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/reports/filter?college_id=COL_A&type=Workshop&date_from=2024-01-01&date_to=2024-12-31",
+              "host": ["{{baseUrl}}"],
+              "path": ["reports", "filter"],
+              "query": [
+                {"key": "college_id", "value": "COL_A"},
+                {"key": "type", "value": "Workshop"},
+                {"key": "date_from", "value": "2024-01-01"},
+                {"key": "date_to", "value": "2024-12-31"}
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Error Cases",
+      "item": [
+        {
+          "name": "Invalid Event ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/events/invalid-id"
+          }
+        },
+        {
+          "name": "Unauthorized Admin Access",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/admin/events"
+          }
+        },
+        {
+          "name": "Invalid Admin Token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-admin-token",
+                "value": "invalid-token"
+              }
+            ],
+            "url": "{{baseUrl}}/admin/events"
+          }
+        },
+        {
+          "name": "Duplicate Registration",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"student_id\": \"STUD_1\",\n  \"name\": \"Arjun Sharma\",\n  \"email\": \"arjun.sharma@techuniv.edu.in\"\n}"
+            },
+            "url": "{{baseUrl}}/events/EVENT_1/register"
+          }
+        },
+        {
+          "name": "Invalid Feedback Rating",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 10,\n  \"comment\": \"Invalid rating test\"\n}"
+            },
+            "url": "{{baseUrl}}/registrations/REG_1/feedback"
+          }
+        }
+      ]
+    }
+  ]
+}

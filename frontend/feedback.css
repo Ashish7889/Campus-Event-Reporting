@@ -1,0 +1,235 @@
+/* Feedback Form Styles */
+.feedback-method {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.feedback-method h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.method-selection {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.method-selection label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 10px 15px;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.method-selection label:hover {
+    border-color: #007bff;
+    background: #f0f8ff;
+}
+
+.method-selection label input[type="radio"] {
+    margin: 0;
+}
+
+.method-selection label input[type="radio"]:checked + label,
+.method-selection label:has(input[type="radio"]:checked) {
+    border-color: #007bff;
+    background: #e7f3ff;
+    font-weight: 500;
+}
+
+/* Star Rating Styles */
+.star-rating {
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.star {
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #ddd;
+    user-select: none;
+}
+
+.star:hover {
+    transform: scale(1.1);
+}
+
+.star.selected,
+.star.hover {
+    color: #ff6b35;
+}
+
+/* Event Details Display */
+.event-info {
+    background: #e8f5e8;
+    border-left: 4px solid #28a745;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 6px 6px 0;
+}
+
+.event-info h4 {
+    margin: 0 0 10px 0;
+    color: #155724;
+}
+
+.event-info p {
+    margin: 0;
+    color: #155724;
+    line-height: 1.5;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+}
+
+/* Button Styles */
+button[type="submit"] {
+    background: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+button[type="submit"]:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+}
+
+button[type="button"] {
+    background: #6c757d;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+
+button[type="button"]:hover {
+    background: #545b62;
+}
+
+/* Rating Text Styling */
+#ratingText {
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+/* Character Counter */
+.char-counter {
+    float: right;
+    margin-top: -20px;
+    margin-right: 5px;
+    font-size: 11px;
+    color: #666;
+}
+
+/* Registrations List */
+#registrationsList {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+#selectRegistration {
+    margin-top: 10px;
+}
+
+/* Animation for form sections */
+.form-group,
+#eventDetailsDisplay {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .method-selection {
+        flex-direction: column;
+    }
+    
+    .method-selection label {
+        justify-content: center;
+    }
+    
+    .star-rating {
+        justify-content: center;
+        font-size: 30px;
+    }
+    
+    .char-counter {
+        float: none;
+        margin-top: 5px;
+        margin-right: 0;
+    }
+}
