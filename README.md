@@ -44,11 +44,55 @@ A modern, comprehensive web application for managing campus events, registration
 
 ## 🚀 Quick Start
 
-### Prerequisites
+### 🐳 Docker Deployment (Recommended)
+
+#### Prerequisites
+- **Docker** and **Docker Compose**
+- **Git** for cloning the repository
+
+#### One-Click Deployment
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Ashish7889/Campus-Event-Reporting.git
+   cd Campus-Event-Reporting
+   ```
+
+2. **Deploy with one command**
+   
+   **Linux/Mac:**
+   ```bash
+   chmod +x scripts/deploy.sh
+   ./scripts/deploy.sh
+   ```
+   
+   **Windows:**
+   ```cmd
+   scripts\deploy.bat
+   ```
+   
+   **Manual Docker Compose:**
+   ```bash
+   docker-compose up -d
+   ```
+
+3. **Access the application**
+   ```
+   http://localhost:4000
+   ```
+
+#### Production Deployment with Nginx
+```bash
+./scripts/deploy.sh production
+```
+
+### 📦 Traditional Node.js Setup
+
+#### Prerequisites
 - **Node.js** (v14 or higher)
 - **npm** (comes with Node.js)
 
-### Installation
+#### Installation
 
 1. **Clone the repository**
    ```bash
@@ -170,32 +214,68 @@ Key settings in `server.js`:
 
 ## 🚀 Deployment
 
-### Local Development
+### 🐳 Docker Deployment (Recommended)
+
+#### Development
+```bash
+docker-compose up -d
+```
+
+#### Production with Nginx
+```bash
+docker-compose --profile production up -d
+```
+
+#### Useful Docker Commands
+```bash
+# View logs
+docker-compose logs -f campus-events
+
+# Stop application
+docker-compose down
+
+# Restart application
+docker-compose restart campus-events
+
+# Update application
+docker-compose pull && docker-compose up -d
+
+# Clean rebuild
+docker-compose down && docker-compose build --no-cache && docker-compose up -d
+```
+
+### 📦 Traditional Node.js Deployment
+
+#### Local Development
 ```bash
 npm run dev
 ```
 
-### Production Deployment
-1. **Build optimized version**
-   ```bash
-   npm run build
-   ```
-
-2. **Set production environment**
+#### Production Deployment
+1. **Set production environment**
    ```bash
    export NODE_ENV=production
    ```
 
-3. **Start production server**
+2. **Start production server**
    ```bash
    npm start
    ```
 
-### Hosting Options
+### ☁️ Cloud Hosting Options
+
+#### Docker-Compatible Platforms
+- **Railway**: `railway up` (supports Docker out of the box)
+- **Render**: Connect GitHub repo with Dockerfile
+- **DigitalOcean App Platform**: Deploy from GitHub
+- **Google Cloud Run**: Serverless container deployment
+- **AWS ECS**: Enterprise container orchestration
+
+#### Traditional Hosting
 - **Heroku**: Easy deployment with Git integration
 - **Vercel**: Optimized for Node.js applications
-- **DigitalOcean**: Full control with VPS hosting
-- **Railway**: Modern deployment platform
+- **Netlify Functions**: Serverless deployment
+- **VPS Hosting**: Full control with any provider
 
 ## 📝 Contributing
 
