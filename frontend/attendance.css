@@ -253,3 +253,460 @@
         font-size: 11px;
     }
 }
+
+/* Admin Section Attendance Styling - Black & White Theme */
+#admin .attendance-header {
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.7) 0%, rgba(30, 30, 30, 0.8) 100%);
+    backdrop-filter: blur(25px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 12px 24px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+#admin .attendance-header h4 {
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#admin .attendance-header p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#admin .attendance-summary {
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.6) 0%, rgba(25, 25, 25, 0.7) 100%);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+#admin .attendance-summary span:nth-child(1) {
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    color: #1a1a1a;
+}
+
+#admin .attendance-summary span:nth-child(2) {
+    background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+    color: #ffffff;
+}
+
+#admin .attendance-summary span:nth-child(3) {
+    background: linear-gradient(135deg, #666666 0%, #404040 100%);
+    color: #ffffff;
+}
+
+#admin .attendance-table {
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.6) 0%, rgba(20, 20, 20, 0.7) 100%);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+#admin .attendance-table th {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#admin .attendance-table td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#admin .attendance-row:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#admin .attendance-row.present {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid #ffffff;
+}
+
+#admin .attendance-row.absent {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid #666666;
+}
+
+#admin .attendance-row.not_marked {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+#admin .status-badge.present {
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    color: #1a1a1a;
+}
+
+#admin .status-badge.absent {
+    background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+    color: #ffffff;
+}
+
+#admin .status-badge.not_marked {
+    background: linear-gradient(135deg, #666666 0%, #404040 100%);
+    color: #ffffff;
+}
+
+#admin .btn-success {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    color: #1a1a1a;
+}
+
+#admin .btn-success:hover:not(:disabled) {
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+}
+
+#admin .btn-danger {
+    background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+    color: #ffffff;
+}
+
+#admin .btn-danger:hover:not(:disabled) {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+#admin #attendanceEventSelect {
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+#admin #attendanceEventSelect:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#admin #attendanceEventSelect option {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Report Generation Section */
+.report-controls {
+    background: #FFFFFF;
+    border: 3px solid #C4A484;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 24px rgba(139, 30, 63, 0.15);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.report-controls .form-row {
+    display: flex;
+    gap: 24px;
+    align-items: end;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.report-controls .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 220px;
+    flex: 1;
+    max-width: 280px;
+}
+
+.report-controls label {
+    color: #8B1E3F;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.report-controls select {
+    background: #F7F1E3;
+    color: #555555;
+    border: 3px solid #C4A484;
+    border-radius: 12px;
+    padding: 18px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-height: 56px;
+    cursor: pointer;
+}
+
+.report-controls select:focus {
+    border-color: #8B1E3F;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(139, 30, 63, 0.1);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.report-controls select option {
+    background: #FFFFFF;
+    color: #555555;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.report-controls .btn-generate {
+    background: #8B1E3F;
+    color: #FFFFFF;
+    border: 3px solid #8B1E3F;
+    border-radius: 12px;
+    padding: 20px 48px;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 64px;
+    min-width: 200px;
+    box-shadow: 0 6px 20px rgba(139, 30, 63, 0.3);
+    align-self: end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.report-controls .btn-generate:hover:not(:disabled) {
+    background: #6B1530;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(139, 30, 63, 0.4);
+}
+
+.report-controls .btn-generate:active {
+    transform: translateY(-1px);
+}
+
+/* Report Display Section */
+.report-section {
+    background: #FFFFFF;
+    border: 3px solid #C4A484;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(139, 30, 63, 0.15);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.report-section h3 {
+    color: #8B1E3F;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    text-align: center;
+    border-bottom: 3px solid #C4A484;
+    padding-bottom: 16px;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 2px solid #C4A484;
+    box-shadow: 0 4px 16px rgba(196, 164, 132, 0.2);
+    margin-top: 24px;
+}
+
+.report-table thead {
+    background: #8B1E3F;
+}
+
+.report-table th {
+    padding: 20px 24px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+    border-bottom: 2px solid #FFFFFF;
+    position: relative;
+}
+
+.report-table th::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.report-table th:last-child::after {
+    display: none;
+}
+
+.report-table tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 2px solid #F7F1E3;
+}
+
+.report-table tbody tr:hover {
+    background-color: #F7F1E3;
+    transform: scale(1.001);
+}
+
+.report-table tbody tr:nth-child(even) {
+    background-color: rgba(247, 241, 227, 0.5);
+}
+
+.report-table td {
+    padding: 18px 24px;
+    color: #555555;
+    font-size: 16px;
+    vertical-align: middle;
+    font-weight: 500;
+}
+
+.report-table .event-title {
+    font-weight: 700;
+    color: #8B1E3F;
+}
+
+.report-table .college-name {
+    color: #555555;
+    font-style: italic;
+}
+
+.report-table .date-cell {
+    color: #555555;
+    font-family: 'Courier New', monospace;
+}
+
+.report-table .stats-cell {
+    font-weight: 700;
+    text-align: center;
+}
+
+.report-table .attendance-percentage {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    border: 2px solid;
+}
+
+.report-table .attendance-percentage.excellent {
+    background: #8B1E3F;
+    color: #FFFFFF;
+    border-color: #8B1E3F;
+}
+
+.report-table .attendance-percentage.good {
+    background: #C4A484;
+    color: #FFFFFF;
+    border-color: #C4A484;
+}
+
+.report-table .attendance-percentage.average {
+    background: #F7F1E3;
+    color: #8B1E3F;
+    border-color: #C4A484;
+}
+
+.report-table .attendance-percentage.poor {
+    background: #FFFFFF;
+    color: #8B1E3F;
+    border-color: #8B1E3F;
+}
+
+/* Empty State */
+.report-empty {
+    text-align: center;
+    padding: 64px 32px;
+    color: #555555;
+}
+
+.report-empty .empty-icon {
+    font-size: 64px;
+    margin-bottom: 24px;
+    color: #C4A484;
+    opacity: 0.7;
+}
+
+.report-empty h4 {
+    color: #8B1E3F;
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.report-empty p {
+    color: #555555;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* Loading State */
+.report-loading {
+    text-align: center;
+    padding: 64px 32px;
+    color: #555555;
+}
+
+.report-loading .spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #F7F1E3;
+    border-top: 4px solid #8B1E3F;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 24px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .report-controls {
+        padding: 24px;
+    }
+    
+    .report-controls .form-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+    
+    .report-controls .form-group {
+        min-width: auto;
+        max-width: none;
+    }
+    
+    .report-controls select,
+    .report-controls .btn-generate {
+        font-size: 14px;
+        padding: 14px 20px;
+    }
+    
+    .report-section {
+        padding: 24px;
+    }
+    
+    .report-table {
+        font-size: 14px;
+    }
+    
+    .report-table th,
+    .report-table td {
+        padding: 12px 16px;
+    }
+    
+    .report-table .attendance-percentage {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
