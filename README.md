@@ -1,4 +1,4 @@
-Campus Even reporting system
+Campus Event reporting system
 
 Hi! I made a website for my college! This is my project for WebKnot company.
 
