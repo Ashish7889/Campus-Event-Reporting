@@ -1,17 +1,16 @@
-/* Feedback Form Styles */
+/* Feedback Form Styles - Updated for New Color Scheme */
 .feedback-method {
     margin-bottom: 32px;
     padding: 32px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #FFFFFF;
+    border: 2px solid #C4A484;
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(139, 30, 63, 0.1);
 }
 
 .feedback-method h3 {
     margin: 0 0 24px 0;
-    color: white;
+    color: #8B1E3F;
     font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
@@ -29,52 +28,36 @@
     gap: 12px;
     cursor: pointer;
     padding: 20px 24px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #F7F1E3;
+    border: 2px solid #C4A484;
     border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    color: white;
-    font-weight: 500;
+    transition: all 0.3s ease;
+    color: #555555;
+    font-weight: 600;
     position: relative;
     overflow: hidden;
 }
 
-.method-selection label::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 0.3s ease;
-}
-
-.method-selection label:hover::before {
-    left: 100%;
-}
-
 .method-selection label:hover {
-    border-color: rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-color: #8B1E3F;
+    background: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 30, 63, 0.15);
 }
 
 .method-selection label input[type="radio"] {
     margin: 0;
-    accent-color: #667eea;
+    accent-color: #8B1E3F;
     transform: scale(1.2);
 }
 
 .method-selection label input[type="radio"]:checked + span,
 .method-selection label:has(input[type="radio"]:checked) {
-    border-color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.2);
-    font-weight: 600;
-    color: white;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-color: #8B1E3F;
+    background: #8B1E3F;
+    font-weight: 700;
+    color: #FFFFFF;
+    box-shadow: 0 4px 16px rgba(139, 30, 63, 0.2);
 }
 
 /* Star Rating Styles */
@@ -85,29 +68,28 @@
     margin: 24px 0;
     font-size: 32px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
+    background: #F7F1E3;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid #C4A484;
 }
 
 .star {
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    color: rgba(255, 255, 255, 0.3);
+    color: #C4A484;
     user-select: none;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: relative;
 }
 
 .star:hover {
     transform: scale(1.2) rotate(5deg);
-    color: rgba(255, 107, 53, 0.8);
+    color: #8B1E3F;
 }
 
 .star.selected,
 .star.hover {
-    color: #ff6b35;
-    filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.5));
+    color: #8B1E3F;
+    filter: drop-shadow(0 0 8px rgba(139, 30, 63, 0.5));
     animation: starGlow 0.3s ease;
 }
 
@@ -119,111 +101,147 @@
 
 /* Event Details Display */
 .event-info {
-    background: rgba(40, 167, 69, 0.1);
-    backdrop-filter: blur(10px);
-    border-left: 4px solid #28a745;
+    background: #F7F1E3;
+    border-left: 4px solid #8B1E3F;
     padding: 24px;
     margin: 24px 0;
     border-radius: 0 16px 16px 0;
-    box-shadow: 0 4px 16px rgba(40, 167, 69, 0.1);
+    box-shadow: 0 4px 16px rgba(139, 30, 63, 0.1);
+    border: 2px solid #C4A484;
+    border-left: 4px solid #8B1E3F;
 }
 
 .event-info h4 {
     margin: 0 0 16px 0;
-    color: white;
+    color: #8B1E3F;
     font-weight: 700;
     font-size: 1.3rem;
 }
 
 .event-info p {
     margin: 8px 0;
-    color: rgba(255, 255, 255, 0.9);
+    color: #555555;
     line-height: 1.6;
     font-weight: 500;
 }
 
-/* Form Groups */
+/* Form Groups - Updated to Match Website Theme */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: 500;
-    color: #333;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #555555;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: border-color 0.2s;
+    padding: 18px 24px;
+    border: 2px solid #C4A484;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #F7F1E3;
+    color: #555555;
+    transition: all 0.3s ease;
+    outline: none;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    border-color: #8B1E3F;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(139, 30, 63, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #555555;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.form-group select option {
+    background: #FFFFFF;
+    color: #555555;
+    padding: 15px;
+    font-weight: 500;
 }
 
 .form-group small {
     display: block;
-    margin-top: 5px;
-    color: #666;
-    font-size: 12px;
+    margin-top: 8px;
+    color: #555555;
+    font-size: 13px;
+    opacity: 0.8;
+    font-style: italic;
 }
 
-/* Button Styles */
+/* Button Styles - Updated to Match Website Theme */
 button[type="submit"] {
-    background: #007bff;
-    color: white;
-    padding: 12px 24px;
+    background: #8B1E3F;
+    color: #FFFFFF;
+    padding: 16px 32px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(139, 30, 63, 0.2);
 }
 
 button[type="submit"]:hover:not(:disabled) {
-    background: #0056b3;
-    transform: translateY(-1px);
+    background: #6B1530;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(139, 30, 63, 0.3);
 }
 
 button[type="submit"]:disabled {
-    background: #6c757d;
+    background: #C4A484;
+    color: #555555;
     cursor: not-allowed;
     transform: none;
+    opacity: 0.6;
 }
 
 button[type="button"] {
-    background: #6c757d;
-    color: white;
-    padding: 8px 16px;
+    background: #C4A484;
+    color: #FFFFFF;
+    padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
-    margin-top: 10px;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+    box-shadow: 0 2px 8px rgba(196, 164, 132, 0.2);
 }
 
 button[type="button"]:hover {
-    background: #545b62;
+    background: #A88866;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(196, 164, 132, 0.3);
 }
 
 /* Rating Text Styling */
 #ratingText {
-    font-weight: 500;
+    font-weight: 600;
     margin-left: 10px;
+    color: #8B1E3F;
+    font-size: 14px;
 }
 
 /* Character Counter */
@@ -231,47 +249,54 @@ button[type="button"]:hover {
     float: right;
     margin-top: -20px;
     margin-right: 5px;
-    font-size: 11px;
-    color: #666;
+    font-size: 12px;
+    color: #555555;
+    opacity: 0.7;
 }
 
-/* Registrations List */
+/* Registrations List - Updated for Clean Design */
 #registrationsList {
     margin-top: 24px;
     padding: 24px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #F7F1E3;
+    border: 2px solid #C4A484;
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(139, 30, 63, 0.1);
+}
+
+#registrationsList label {
+    color: #8B1E3F;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 12px;
+    display: block;
 }
 
 #selectRegistration {
     margin-top: 16px;
     width: 100%;
-    padding: 16px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    font-size: 14px;
+    padding: 18px 24px;
+    border: 2px solid #C4A484;
+    border-radius: 8px;
+    font-size: 16px;
     font-weight: 500;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: white;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #FFFFFF;
+    color: #555555;
+    transition: all 0.3s ease;
     outline: none;
 }
 
 #selectRegistration:focus {
-    border-color: rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #8B1E3F;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(139, 30, 63, 0.1);
 }
 
 #selectRegistration option {
-    background: #2d3748;
-    color: white;
-    padding: 10px;
+    background: #FFFFFF;
+    color: #555555;
+    padding: 15px;
+    font-weight: 500;
 }
 
 /* Animation for form sections */
