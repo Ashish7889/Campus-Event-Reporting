@@ -488,32 +488,34 @@
 /* Report Display Section */
 .report-section {
     background: #FFFFFF;
-    border: 3px solid #C4A484;
+    border: 4px solid #8B1E3F;
     border-radius: 16px;
     padding: 40px;
-    box-shadow: 0 8px 24px rgba(139, 30, 63, 0.15);
+    box-shadow: 0 12px 32px rgba(139, 30, 63, 0.2);
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 24px;
 }
 
 .report-section h3 {
     color: #8B1E3F;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
     margin-bottom: 32px;
     text-align: center;
-    border-bottom: 3px solid #C4A484;
+    border-bottom: 4px solid #8B1E3F;
     padding-bottom: 16px;
 }
 
 .report-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     border-radius: 12px;
     overflow: hidden;
     background: #FFFFFF;
-    border: 2px solid #C4A484;
-    box-shadow: 0 4px 16px rgba(196, 164, 132, 0.2);
+    border: 4px solid #8B1E3F;
+    box-shadow: 0 8px 24px rgba(139, 30, 63, 0.2);
     margin-top: 24px;
 }
 
@@ -525,29 +527,21 @@
     padding: 20px 24px;
     color: #FFFFFF;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
     text-align: left;
-    border-bottom: 2px solid #FFFFFF;
+    border-bottom: 3px solid #FFFFFF;
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
     position: relative;
+    background: #8B1E3F;
 }
 
-.report-table th::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 20%;
-    height: 60%;
-    width: 1px;
-    background: rgba(255, 255, 255, 0.3);
-}
-
-.report-table th:last-child::after {
-    display: none;
+.report-table th:last-child {
+    border-right: none;
 }
 
 .report-table tbody tr {
     transition: all 0.3s ease;
-    border-bottom: 2px solid #F7F1E3;
+    border-bottom: 2px solid #C4A484;
 }
 
 .report-table tbody tr:hover {
@@ -556,15 +550,25 @@
 }
 
 .report-table tbody tr:nth-child(even) {
-    background-color: rgba(247, 241, 227, 0.5);
+    background-color: #F7F1E3;
+}
+
+.report-table tbody tr:nth-child(odd) {
+    background-color: #FFFFFF;
 }
 
 .report-table td {
     padding: 18px 24px;
     color: #555555;
-    font-size: 16px;
+    font-size: 17px;
     vertical-align: middle;
-    font-weight: 500;
+    font-weight: 600;
+    border-right: 1px solid #C4A484;
+    border-bottom: 2px solid #C4A484;
+}
+
+.report-table td:last-child {
+    border-right: none;
 }
 
 .report-table .event-title {

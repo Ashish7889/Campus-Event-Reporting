@@ -881,34 +881,36 @@ nav {
 
 .report-container {
     background: var(--soft-white);
-    border: 3px solid var(--border-color);
+    border: 4px solid var(--burgundy);
     border-radius: 16px;
     padding: 40px;
-    box-shadow: 0 8px 24px rgba(139, 30, 63, 0.15);
+    box-shadow: 0 12px 32px rgba(139, 30, 63, 0.2);
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 24px;
     color: var(--text-primary);
     min-height: 200px;
 }
 
 .report-container h3 {
     color: var(--burgundy);
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
     margin-bottom: 32px;
     text-align: center;
-    border-bottom: 3px solid var(--border-color);
+    border-bottom: 4px solid var(--burgundy);
     padding-bottom: 16px;
 }
 
 .report-container table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     border-radius: 12px;
     overflow: hidden;
     background: var(--soft-white);
-    border: 2px solid var(--border-color);
-    box-shadow: 0 4px 16px rgba(196, 164, 132, 0.2);
+    border: 4px solid var(--burgundy);
+    box-shadow: 0 8px 24px rgba(139, 30, 63, 0.2);
     margin-top: 24px;
 }
 
@@ -920,18 +922,37 @@ nav {
     padding: 20px 24px;
     color: var(--soft-white);
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
     text-align: left;
-    border-bottom: 2px solid var(--soft-white);
+    border-bottom: 3px solid var(--soft-white);
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    background: var(--burgundy);
+}
+
+.report-container table th:last-child {
+    border-right: none;
 }
 
 .report-container table td {
     padding: 18px 24px;
     color: var(--text-primary);
-    font-size: 16px;
+    font-size: 17px;
     vertical-align: middle;
-    font-weight: 500;
-    border-bottom: 2px solid var(--cream);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.report-container table td:last-child {
+    border-right: none;
+}
+
+.report-container table tbody tr:nth-child(even) {
+    background-color: var(--cream);
+}
+
+.report-container table tbody tr:nth-child(odd) {
+    background-color: var(--soft-white);
 }
 
 .report-container table tbody tr:hover {
