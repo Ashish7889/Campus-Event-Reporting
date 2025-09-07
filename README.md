@@ -86,3 +86,19 @@ Only teachers should know this
 Students should not use admin section
 
 This is my WebKnot company assignment and I worked really hard on it. I hope you like my college event website!
+
+Q&A
+Should event IDs be unique across colleges?
+Yes. Give every event its own special id so they never get mixed up.
+Put all the data in one big table and stick a college name on each row.
+This way it is very easy to find and count stuff.
+
+Would you keep data separate per college, or maintain one large dataset?
+One big table.
+Put the college name on each row.
+It is easier to find things and make reports.
+Only make separate databases if a college needs total privacy.
+
+Here i have used warp Ai to build this prototype 
+
+the difficulties here i have faced was connecting with the database and handling the database 
